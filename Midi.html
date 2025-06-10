@@ -162,7 +162,8 @@ function mergeTracks(t1, t2) {
 								const newNote = {
 									midi: pitch + bend,
 									time: original_start + i / ticks_per_second,
-									duration: original_end - original_start - i / ticks_per_second
+									duration: original_end - original_start - i / ticks_per_second,
+									velocity: note.velocity
 								};
 								newNotes.push(newNote);
 								last_end = i / ticks_per_second;
@@ -172,7 +173,8 @@ function mergeTracks(t1, t2) {
 								const newNote = {
 									midi: pitch + bend,
 									time: original_start + i / ticks_per_second,
-									duration: original_end - original_start - i / ticks_per_second
+									duration: original_end - original_start - i / ticks_per_second,
+									velocity: note.velocity
 								};
 								newNotes.push(newNote);
 								note.duration = i / ticks_per_second - last_end;
